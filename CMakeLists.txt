@@ -18,8 +18,8 @@ add_subdirectory(${MODEL_DIR})
 set(QML_FILES
     ${SRC_DIR}/main.qml
     #components
-    ${VIEW_DIR}/components/Cell.qml
-    ${VIEW_DIR}/components/Control.qml)
+    ${VIEW_DIR}/components/SideTabBar.qml
+    ${VIEW_DIR}/components/SideBarElement.qml)
 
 set(SRC_FILES
     ${SRC_DIR}/main.cpp)
@@ -32,6 +32,7 @@ set(QML_SOURCES
 find_package(Qt5 COMPONENTS Core Quick REQUIRED)
 
 qt5_add_resources(QT_RESOURCES ${QML_SOURCES})
+
 add_executable(${PROJECT_NAME} ${QT_RESOURCES} ${SRC_FILES} ${QML_FILES})
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
