@@ -6,6 +6,8 @@ Window {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello World")
-    Control{image: "a.png"}
+    title: qsTr("Management System")
+    color: "#eee"
+    SideTabBar{}
+    MainContent{}
 }

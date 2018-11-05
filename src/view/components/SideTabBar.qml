@@ -51,7 +51,7 @@ Item {
                layer.effect: DropShadow {
                    horizontalOffset: 1
                    verticalOffset: 0
-                    samples: 2
+                   samples: 2
                    spread: 0.1
                    color: Qt.rgba(0,0,0,0.3)
                }

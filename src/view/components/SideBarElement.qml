@@ -14,6 +14,7 @@ Item {
        anchors.fill: parent
        color: highlight ? Qt.rgba(1,1,0,1) : Qt.rgba(0,0,0,0)
 
+
     }
     Image {
         id: sideBarElementicon

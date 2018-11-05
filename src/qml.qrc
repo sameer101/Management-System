@@ -3,13 +3,14 @@
         <file>main.qml</file>
         <file>main.cpp</file>
         <file>qml.qrc</file>
-        <file>view/components/a.png</file>
-        <file>view/components/A.qml</file>
-        <file>view/components/Cell.qml</file>
-        <file>view/components/Control.qml</file>
-        <file>view/components/Filler.qml</file>
-        <file>view/components/Navigation.qml</file>
-        <file>view/components/OpenGlRenderWindow.qml</file>
-        <file>view/components/SideBar.qml</file>
+        <file>view/components/CMakeLists.txt</file>
+        <file>view/components/SideBarElement.qml</file>
+        <file>view/components/SideTabBar.qml</file>
+        <file>view/CMakeLists.txt</file>
+        <file>view/assets/List.png</file>
+        <file>view/assets/product.png</file>
+        <file>view/assets/product.svg</file>
+        <file>view/components/Cart.qml</file>
+        <file>view/components/MainContent.qml</file>
     </qresource>
 </RCC>

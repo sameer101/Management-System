@@ -19,7 +19,9 @@ set(QML_FILES
     ${SRC_DIR}/main.qml
     #components
     ${VIEW_DIR}/components/SideTabBar.qml
-    ${VIEW_DIR}/components/SideBarElement.qml)
+    ${VIEW_DIR}/components/SideBarElement.qml
+    ${VIEW_DIR}/components/Cart.qml
+    ${VIEW_DIR}/components/MainContent.qml)
 
 set(SRC_FILES
     ${SRC_DIR}/main.cpp)
