@@ -12,5 +12,7 @@
         <file>view/assets/product.svg</file>
         <file>view/components/Cart.qml</file>
         <file>view/components/MainContent.qml</file>
+        <file>view/components/ControlsBar.qml</file>
+        <file>view/components/TopContent.qml</file>
     </qresource>
 </RCC>
