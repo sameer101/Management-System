@@ -22,7 +22,8 @@ set(QML_FILES
     ${VIEW_DIR}/components/SideBarElement.qml
     ${VIEW_DIR}/components/Cart.qml
     ${VIEW_DIR}/components/MainContent.qml
-    ${VIEW_DIR}/components/TopContent.qml
+    ${VIEW_DIR}/components/TopBar.qml
+    ${VIEW_DIR}/components/BottomBar.qml
     ${VIEW_DIR}/components/ControlsBar.qml)
 
 set(SRC_FILES
