@@ -11,9 +11,15 @@ Item {
     Layout.alignment: Qt.AlignTop
 
     Rectangle{
-       anchors.fill: parent
-       color: highlight ? Qt.rgba(1,1,0,1) : Qt.rgba(0,0,0,0)
-
+        id: elemenBack
+        anchors.fill: parent
+        color: Qt.rgba(0,0,0,0)
+    }
+    Rectangle{
+         anchors.left: elemenBack.left
+         width:3
+         height: elemenBack.height
+         color: highlight ? Qt.rgba(1,1,0,1) : Qt.rgba(0,0,0,0)
 
     }
     Image {
@@ -21,7 +27,7 @@ Item {
         source: "genericIcon.png"
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        width: 50
-        height: 50
+        width: 35
+        height: 35
     }
 }
