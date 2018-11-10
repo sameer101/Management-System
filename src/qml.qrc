@@ -7,12 +7,15 @@
         <file>view/components/SideBarElement.qml</file>
         <file>view/components/SideTabBar.qml</file>
         <file>view/CMakeLists.txt</file>
-        <file>view/assets/List.png</file>
-        <file>view/assets/product.png</file>
-        <file>view/assets/product.svg</file>
         <file>view/components/Cart.qml</file>
         <file>view/components/MainContent.qml</file>
         <file>view/components/ControlsBar.qml</file>
-        <file>view/components/TopContent.qml</file>
+        <file>view/components/BottomBar.qml</file>
+        <file>view/components/TopBar.qml</file>
+        <file>view/components/ControlBarElement.qml</file>
+        <file>view/assets/fonts/MaterialIcons-Regular.ttf</file>
+        <file>view/js/Material-icons.js</file>
+        <file>view/js/Settings.js</file>
+        <file>view/assets/fonts/Roboto-Light.ttf</file>
     </qresource>
 </RCC>

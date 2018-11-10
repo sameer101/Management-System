@@ -1,43 +1,46 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
+import "../js/Material-icons.js" as MD
+
 import "."
 Item {
     id: sideTabBar
+    anchors{
+        left: parent.left
+        top: parent.top
+        bottom: parent.bottom
+        topMargin: 40
+        bottomMargin: 0
+    }
     width: 70
-    height: parent.height
     property string activeElement: ""
     property int currentIndex: -1
     Rectangle{
-        color: "#a809c4"
+        id: sideTabBarBack
+        color: "#7264A7"
         anchors.fill: parent
-    }
 
+    }
     ListModel{
         id: elements
-        ListElement {
-            image: "../assets/product.svg"
-        }
-        ListElement {
-            image: "../assets/product.svg"
-        }
-        ListElement {
-            image: "../assets/product.svg"
-        }
+        ListElement {iconName: "shopping_basket"; iconText: "Products"}
     }
 
     ColumnLayout{
         id:sidebarLayout
         anchors.fill: parent
-        spacing:2
+        anchors.topMargin: 150
+        spacing:4
 
         Repeater{
             model: elements
             SideBarElement{
                 id: element
-                highlight: ix == currentIndex
-                icon: image
                 property int ix: index
+                highlight: ix == currentIndex
+                icon: iconName
+                iconReference: iconText
                 MouseArea{
                     anchors.fill: parent
                     onClicked: currentIndex = ix
@@ -47,12 +50,4 @@ Item {
         Item {Layout.fillHeight: true}
     }
 
-    layer.enabled: true
-               layer.effect: DropShadow {
-                   horizontalOffset: 1
-                   verticalOffset: 0
-                   samples: 2
-                   spread: 0.1
-                   color: Qt.rgba(0,0,0,0.3)
-               }
 }

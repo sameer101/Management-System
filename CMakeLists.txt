@@ -24,6 +24,7 @@ set(QML_FILES
     ${VIEW_DIR}/components/MainContent.qml
     ${VIEW_DIR}/components/TopBar.qml
     ${VIEW_DIR}/components/BottomBar.qml
+    ${VIEW_DIR}/components/ControlBarElement.qml
     ${VIEW_DIR}/components/ControlsBar.qml)
 
 set(SRC_FILES
@@ -32,13 +33,15 @@ set(HEADER_FILES )
 set(QML_SOURCES
     ${SRC_DIR}/qml.qrc)
 
-
+set(JS_FILES
+    ${VIEW_DIR}/js/Material-icons.js
+    ${VIEW_DIR}/js/Settings.js)
 
 find_package(Qt5 COMPONENTS Core Quick REQUIRED)
 
 qt5_add_resources(QT_RESOURCES ${QML_SOURCES})
 
-add_executable(${PROJECT_NAME} ${QT_RESOURCES} ${SRC_FILES} ${QML_FILES})
+add_executable(${PROJECT_NAME} ${QT_RESOURCES} ${SRC_FILES} ${QML_FILES} ${JS_FILES})
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Quick)
