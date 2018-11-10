@@ -3,8 +3,6 @@ import QtGraphicalEffects 1.0
 import QtQuick.Layouts 1.3
 Item {
     id: cart
-    //property string category: ""
-    //property alias image: ""
     Layout.preferredHeight: 300
     Layout.preferredWidth: 100
     Layout.fillWidth: true

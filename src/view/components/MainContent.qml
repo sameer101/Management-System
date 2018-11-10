@@ -29,17 +29,6 @@ Item {
             columns: 4
 
             Cart{}
-            Cart{}
-            Cart{}
-            Cart{}
-
-            Cart{}
-            Cart{}
-            Cart{}
-            Cart{}
-            Cart{}Cart{}
-
-            Cart{}
         }
     }
 }
