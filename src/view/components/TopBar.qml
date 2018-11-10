@@ -3,10 +3,9 @@ import QtGraphicalEffects 1.0
 Item {
     id: topContent
     width: parent.width
-    height: 50
+    height: 40
     anchors{
         top: parent.top
-        left: parent.left
         right: parent.right
     }
     Rectangle{
@@ -14,19 +13,16 @@ Item {
         width:parent.width
         height: parent.height
         color: "#FFF"
-        radius: 9
     }
-    Rectangle{
-        id: topContentRoundedCorners
-        anchors{
-            bottom: topContentback.bottom
-            left: topContentback.left
-            right: topContentback.right
-        }
-        height: topContentback.radius
-        width: topContentback.width
-        color: topContentback.color
-    }
+    ControlsBar{}
+    layer.enabled: true
+               layer.effect: DropShadow {
+                   horizontalOffset: 0
+                   verticalOffset: 1
+                   samples: 1
+                   spread: 0
+                   color: Qt.rgba(0,0,0,0.1)
+               }
 
 }
 
