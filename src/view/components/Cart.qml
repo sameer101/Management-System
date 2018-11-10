@@ -5,7 +5,7 @@ Item {
     id: cart
     //property string category: ""
     //property alias image: ""
-    Layout.preferredHeight: 400
+    Layout.preferredHeight: 300
     Layout.preferredWidth: 100
     Layout.fillWidth: true
 
