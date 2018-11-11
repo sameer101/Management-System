@@ -19,11 +19,11 @@ set(QML_FILES
     ${SRC_DIR}/main.qml
     #view
     ${VIEW_DIR}/Products.qml
+    ${VIEW_DIR}/MainContent.qml
     #components
     ${VIEW_DIR}/components/SideTabBar.qml
     ${VIEW_DIR}/components/SideBarElement.qml
     ${VIEW_DIR}/components/Cart.qml
-    ${VIEW_DIR}/components/MainContent.qml
     ${VIEW_DIR}/components/TopBar.qml
     ${VIEW_DIR}/components/BottomBar.qml
     ${VIEW_DIR}/components/ControlBarElement.qml

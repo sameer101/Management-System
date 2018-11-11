@@ -8,7 +8,6 @@
         <file>view/components/SideTabBar.qml</file>
         <file>view/CMakeLists.txt</file>
         <file>view/components/Cart.qml</file>
-        <file>view/components/MainContent.qml</file>
         <file>view/components/ControlsBar.qml</file>
         <file>view/components/BottomBar.qml</file>
         <file>view/components/TopBar.qml</file>
@@ -18,5 +17,6 @@
         <file>view/js/Settings.js</file>
         <file>view/assets/fonts/Roboto-Light.ttf</file>
         <file>view/Products.qml</file>
+        <file>view/MainContent.qml</file>
     </qresource>
 </RCC>

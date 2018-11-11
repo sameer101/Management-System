@@ -3,7 +3,7 @@ import QtQuick.Window 2.11
 import QtGraphicalEffects 1.0
 import QtQuick.Layouts 1.3
 import "./view/components/."
-
+import "./view/."
 Window {
     id:main
     visible: true
@@ -23,7 +23,7 @@ Window {
       clip: true
       TopBar{}
       SideTabBar{}
-      //MainContent{}
+      MainContent{}
     }
 
     DropShadow {
