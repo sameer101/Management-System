@@ -17,6 +17,8 @@ add_subdirectory(${CONTROLLER_DIR})
 add_subdirectory(${MODEL_DIR})
 set(QML_FILES
     ${SRC_DIR}/main.qml
+    #view
+    ${VIEW_DIR}/Products.qml
     #components
     ${VIEW_DIR}/components/SideTabBar.qml
     ${VIEW_DIR}/components/SideBarElement.qml

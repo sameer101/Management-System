@@ -17,5 +17,6 @@
         <file>view/js/Material-icons.js</file>
         <file>view/js/Settings.js</file>
         <file>view/assets/fonts/Roboto-Light.ttf</file>
+        <file>view/Products.qml</file>
     </qresource>
 </RCC>

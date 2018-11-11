@@ -6,3 +6,5 @@ const ICON_ACTIVE_COLOR = "red"
 
 const FONT_HEADER_MEDUIM= "Roboto Lite"
 const FONT_HEADER_MEDUIM_SIZE = 14
+const FONT_HEADER_LARGE= "Roboto"
+const FONT_HEADER_LARGE_SIZE = 18
