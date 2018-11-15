@@ -30,8 +30,13 @@ set(QML_FILES
     ${VIEW_DIR}/components/ControlsBar.qml)
 
 set(SRC_FILES
-    ${SRC_DIR}/main.cpp)
-set(HEADER_FILES )
+    ${SRC_DIR}/main.cpp
+    # Model Directory
+    )
+
+set(HEADER_FILES
+    # Model Directory
+    ${MODEL_DIR}/IDataBase.h)
 set(QML_SOURCES
     ${SRC_DIR}/qml.qrc)
 
@@ -40,10 +45,11 @@ set(JS_FILES
     ${VIEW_DIR}/js/Settings.js)
 
 find_package(Qt5 COMPONENTS Core Quick REQUIRED)
+find_package(Qt5Sql   REQUIRED)
 
 qt5_add_resources(QT_RESOURCES ${QML_SOURCES})
 
-add_executable(${PROJECT_NAME} ${QT_RESOURCES} ${SRC_FILES} ${QML_FILES} ${JS_FILES})
+add_executable(${PROJECT_NAME} ${QT_RESOURCES} ${SRC_FILES}  ${HEADER_FILES} ${QML_FILES} ${JS_FILES})
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Quick)
+target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Quick Qt5::Sql)
