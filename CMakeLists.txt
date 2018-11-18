@@ -32,11 +32,12 @@ set(QML_FILES
 set(SRC_FILES
     ${SRC_DIR}/main.cpp
     # Model Directory
-    )
+    ${MODEL_DIR}/SqliteDB.cpp)
 
 set(HEADER_FILES
     # Model Directory
-    ${MODEL_DIR}/IDataBase.h)
+    ${MODEL_DIR}/IDataBase.h
+    ${MODEL_DIR}/SqliteDB.h)
 set(QML_SOURCES
     ${SRC_DIR}/qml.qrc)
 
