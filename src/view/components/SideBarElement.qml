@@ -19,17 +19,6 @@ Item {
         color: highlight ? "#3C11A5" : Qt.rgba(0,0,0,0)
 
     }
-    Rectangle{
-        width: 4
-        anchors{
-            top: elemenBack.top
-            left: elemenBack.left
-            bottom: elemenBack.bottom
-        }
-
-        color: highlight ? "#FFF" : Qt.rgba(0,0,0,0)
-    }
-
     Text {
         id: icon_font
         font.family: SETTINGS.FONT_MATERIAL_DESIGN

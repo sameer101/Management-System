@@ -16,8 +16,8 @@ Item {
             width: 1
             color: "#DDD"
         }
-
     }
+
     Image {
         width: 0.5 * controlBarElementBack.width
         height: 0.5 * controlBarElementBack.height
