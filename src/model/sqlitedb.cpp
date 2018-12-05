@@ -11,9 +11,10 @@ SqliteDB::~SqliteDB()
     //;
 }
 
-bool SqliteDB::connect(const std::string &db){
+bool SqliteDB::connect(const QString &db){
     bool status = false;
-    m_database.setDatabaseName(QString::fromStdString(db));
+    std::unique_ptr<Settings> setttingsObj;
+    m_database.setDatabaseName("db.sqlite");
     if (!m_database.open())
     {
         std::cout << "SQL ERROR 1 " << QSqlError().text().toStdString() << std::endl;
@@ -26,7 +27,7 @@ bool SqliteDB::connect(const std::string &db){
 
 bool SqliteDB::getData(QSqlQuery &query, QMap<QString,QVariant> &queryData,const QString &table){
     bool status = false;
-    QString queryText = "SELECT * from " + table + " WHERE  ";
+    QString queryText = "SELECT * FROM " + table + " WHERE ";
     QStringList filters;
     query = QSqlQuery(m_database);
     for(auto &key : queryData.keys()){

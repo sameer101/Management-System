@@ -4,12 +4,14 @@
 #include <QSqlQueryModel>
 #pragma warning (pop)
 
+#include "../common/Settings.h"
 #include <QStringList>
 #include <string>
 #include <iostream>
 #include "IDataBase.h"
 
 namespace model{
+
     class SqliteDB;
 }
 
@@ -18,7 +20,7 @@ class SqliteDB: public IDataBase
 public:
     SqliteDB();
     ~SqliteDB();
-    bool connect(const std::string &db);
+    bool connect(const QString &db);
     /**
      * @brief getData executes sql select query.
      * @param query [out] QSqlQuery query object after executing the query.

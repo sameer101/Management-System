@@ -17,13 +17,15 @@ public:
     /**
      * @brief ~IDataBase
      */
-    virtual ~IDataBase() = 0;
+    virtual ~IDataBase(){
+        //;
+    }
     /**
      * @brief connect
      * @param db
      * @return
      */
-    virtual bool connect(const std::string &db) = 0;
+    virtual bool connect(const QString &db) = 0;
     /**
      * @brief getData
      * @param query
