@@ -13,13 +13,13 @@ SqliteDB::~SqliteDB()
 
 bool SqliteDB::connect(const QString &db){
     bool status = false;
-    std::unique_ptr<Settings> setttingsObj;
-    m_database.setDatabaseName("db.sqlite");
+    m_database.setDatabaseName(Settings::SQLITE_DATABASE_NAME);
     if (!m_database.open())
     {
         std::cout << "SQL ERROR 1 " << QSqlError().text().toStdString() << std::endl;
     }
     else {
+        std::cout << "<<<<<<<<<< DB was Created" << std::endl;
         status = true;
     }
     return status;

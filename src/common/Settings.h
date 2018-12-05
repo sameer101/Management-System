@@ -10,9 +10,8 @@ namespace common{
 class Settings
 {
 public:
-    Settings();
-    const QString DATABASE_DIR = QString(QStandardPaths::DocumentsLocation);
-    const  QString SQLITE_DATABASE_NAME = DATABASE_DIR + "db.sqlite";
+    static const QString DATABASE_DIR;
+    static const  QString SQLITE_DATABASE_NAME;
 };
 
 

@@ -12,6 +12,7 @@ set(SRC_DIR src)
 set(VIEW_DIR ${SRC_DIR}/view)
 set(CONTROLLER_DIR ${SRC_DIR}/controller)
 set(MODEL_DIR ${SRC_DIR}/model)
+set(COMMON_DIR ${SRC_DIR}/common)
 add_subdirectory(${VIEW_DIR})
 add_subdirectory(${CONTROLLER_DIR})
 add_subdirectory(${MODEL_DIR})
@@ -31,10 +32,16 @@ set(QML_FILES
 
 set(SRC_FILES
     ${SRC_DIR}/main.cpp
+    #common Directory
+    ${COMMON_DIR}/Settings.cpp
     # Model Directory
     ${MODEL_DIR}/SqliteDB.cpp)
 
 set(HEADER_FILES
+    #common Directory
+    ${COMMON_DIR}/Settings.h
+    #contror diercory
+    ${CONTROLLER_DIR}/DatabaseService.h
     # Model Directory
     ${MODEL_DIR}/IDataBase.h
     ${MODEL_DIR}/SqliteDB.h)
