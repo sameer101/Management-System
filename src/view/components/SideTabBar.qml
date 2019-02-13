@@ -2,6 +2,7 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 import "../js/Material-icons.js" as MD
+import "../js/Settings.js" as SETTINGS
 
 import "."
 Item {
@@ -18,13 +19,14 @@ Item {
     property int currentIndex: -1
     Rectangle{
         id: sideTabBarBack
-        color: "#7264A7"
+        color: SETTINGS.SIDE_BAR_COLOR
         anchors.fill: parent
 
     }
     ListModel{
         id: elements
         ListElement {iconName: "shopping_basket"; iconText: "Products"}
+        ListElement {iconName: "format_list_bulleted"; iconText: "Records"}
     }
 
     ColumnLayout{
@@ -46,8 +48,8 @@ Item {
                     onClicked: currentIndex = ix
                 }
             }
+
         }
         Item {Layout.fillHeight: true}
     }
-
 }

@@ -18,5 +18,6 @@
         <file>view/assets/fonts/Roboto-Light.ttf</file>
         <file>view/Products.qml</file>
         <file>view/MainContent.qml</file>
+        <file>view/Records.qml</file>
     </qresource>
 </RCC>

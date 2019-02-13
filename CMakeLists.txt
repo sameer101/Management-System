@@ -21,6 +21,7 @@ set(QML_FILES
     #view
     ${VIEW_DIR}/Products.qml
     ${VIEW_DIR}/MainContent.qml
+    ${VIEW_DIR}/Records.qml
     #components
     ${VIEW_DIR}/components/SideTabBar.qml
     ${VIEW_DIR}/components/SideBarElement.qml
