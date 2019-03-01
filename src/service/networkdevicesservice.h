@@ -17,8 +17,9 @@ class NetworkDevicesService{
     private:
         static  QString TAG;
     public:
-        static  BYTE * NetworkDevicesService::getMacAddress(const QString &srcIpStr, const QString &destIpStr);
-        static QHostAddress *getInterface();
-        static QList<QString> getAllIps(QHostAddress &ip, QHostAddress &mask);
+
+        static BYTE * getMacAddress(const QString &srcIpStr, const QString &destIpStr);
+        static void getInterface(QString &ip, QString &mask);
+        static QList<QString> getAllIps(QString &ip, QString &mask);
 
 };

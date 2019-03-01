@@ -4,7 +4,7 @@
 
  BYTE * NetworkDevicesService::getMacAddress(const QString &srcIpStr, const QString &destIpStr){
     ULONG macAddrLength = 6;
-     BYTE * phyaddr = nullptr;
+    BYTE * phyaddr = nullptr;
     ULONG macAddress[2];
     DWORD dwRetVal;
     IPAddr destIpAddr = 0;
@@ -51,44 +51,48 @@
     return phyaddr;
 }
 
-    QHostAddress *NetworkDevicesService::getInterface(){
-        QHostAddress localHost = QHostAddress(QHostAddress::LocalHost);
-        QHostAddress *inf = new QHostAddress[2];
-          QList<QNetworkInterface> list = QNetworkInterface::allInterfaces();
-          for(auto &add: list){
-              for(auto &entry : add.addressEntries()){
-                  if(entry.ip().protocol() ==  QAbstractSocket::IPv4Protocol && entry.ip()!=localHost )  {
-                      std::string str =  entry.ip().toString().toStdString();
-                      // Needs to be improved.
-                      if(str.substr(0, str.find_last_of(".")) == "192.168.1"){
-                          inf[0] = entry.ip();
-                          inf[1] = entry.netmask();
-                      }
-                     }
-              }
-      }
-        return inf;
- }
+void NetworkDevicesService::getInterface(QString &ip, QString &mask){
+     QHostAddress localHost = QHostAddress(QHostAddress::LocalHost);
+     QList<QNetworkInterface> list = QNetworkInterface::allInterfaces();
+        for(auto &add: list){
+            for(auto &entry : add.addressEntries()){
+                if(entry.ip().protocol() ==  QAbstractSocket::IPv4Protocol && entry.ip()!=localHost )  {
+                  std::string str =  entry.ip().toString().toStdString();
+                  // Needs to be improved.
+                  if(str.substr(0, str.find_last_of(".")) == "192.168.1"){
+                     ip = entry.ip().toString();
+                     mask = entry.netmask().toString();
+                  }
+                }
+           }
+       }
+        if(ip.isEmpty() || ip.isNull()){
+            qDebug() << TAG << "No Interface was returned";
+        }
+  }
 
- QList<QString> NetworkDevicesService::getAllIps(QHostAddress &ip, QHostAddress &mask){
+ QList<QString> NetworkDevicesService::getAllIps(QString &ip, QString &mask){
      struct in_addr ipaddress, subnetmask;
 
-     inet_pton(AF_INET, ip.toString().toStdString().c_str() , &ipaddress);
-     inet_pton(AF_INET, mask.toString().toStdString().c_str(), &subnetmask);
+    // Convert sting ddresses into ipv4 addresses.
+    inet_pton(AF_INET, ip.toStdString().c_str() , &ipaddress);
+    inet_pton(AF_INET, mask.toStdString().c_str(), &subnetmask);
 
-      QList<QString> ips;
-      unsigned long first_ip = ntohl(ipaddress.s_addr & subnetmask.s_addr);
-      unsigned long last_ip = ntohl(ipaddress.s_addr | ~(subnetmask.s_addr));
-      for (unsigned long ip = first_ip; ip <= last_ip; ++ip) {
-          unsigned long theip = htonl(ip);
+    // List of available ip addresses in the subnet.
+    QList<QString> ips;
+    // getting first ip by bitwising ip address with mask(&)
+    unsigned long first_ip = ntohl(ipaddress.s_addr & subnetmask.s_addr);
+    // getting last ip by bitwising ip address with mask(|)
+    unsigned long last_ip = ntohl(ipaddress.s_addr | ~(subnetmask.s_addr));
+    for (unsigned long ip = first_ip; ip <= last_ip; ++ip) {
+      unsigned long theip = htonl(ip);
+         struct in_addr x;
 
-             struct in_addr x;
+         x.s_addr = theip;
+         // Needs to be improved (deprcated function).
+         ips.append(inet_ntoa(x));
 
-             x.s_addr = theip;
+    }
 
-             ips.append(inet_ntoa(x));
-
-      }
-
-       return ips;
+    return ips;
  }

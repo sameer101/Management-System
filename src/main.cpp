@@ -31,10 +31,10 @@ int main(int argc, char *argv[])
 
 
 
-
-    QHostAddress * ip_mask= NetworkDevicesService::getInterface();
-    qDebug () << ip_mask[0] << ip_mask[1];
-    for(auto &address : NetworkDevicesService::getAllIps(ip_mask[0], ip_mask[1])){
+    QString ip, mask;
+    NetworkDevicesService::getInterface(ip, mask);
+    qDebug () << ip << mask;
+    for(auto &address : NetworkDevicesService::getAllIps(ip, mask)){
             qDebug() << address;
     }
    // BYTE * macAddress = NetworkDevicesService::getMacAddress(,"192.168.1.100");
