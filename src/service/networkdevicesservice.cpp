@@ -20,8 +20,6 @@
     dwRetVal = SendARP(destIpAddr, srcIpAddr, &macAddress, &macAddrLength);
     if(dwRetVal == NO_ERROR){
        phyaddr = reinterpret_cast<BYTE *>(macAddress);
-
-
     }else{
         printf("Error: SendArp failed with error: %d", static_cast<int>(dwRetVal));
                switch (dwRetVal) {
@@ -80,18 +78,16 @@ void NetworkDevicesService::getInterface(QString &ip, QString &mask){
 
     // List of available ip addresses in the subnet.
     QList<QString> ips;
-    // getting first ip by bitwising ip address with mask(&)
+    // Getting first ip by bitwising ip address with mask(&)
     unsigned long first_ip = ntohl(ipaddress.s_addr & subnetmask.s_addr);
-    // getting last ip by bitwising ip address with mask(|)
+    // Getting last ip by bitwising ip address with mask(|)
     unsigned long last_ip = ntohl(ipaddress.s_addr | ~(subnetmask.s_addr));
     for (unsigned long ip = first_ip; ip <= last_ip; ++ip) {
-      unsigned long theip = htonl(ip);
-         struct in_addr x;
-
-         x.s_addr = theip;
-         // Needs to be improved (deprcated function).
-         ips.append(inet_ntoa(x));
-
+        unsigned long theip = htonl(ip);
+        struct in_addr x;
+        x.s_addr = theip;
+        // Needs to be improved (deprcated function).
+        ips.append(inet_ntoa(x));
     }
 
     return ips;
