@@ -1,0 +1,40 @@
+
+#pragma once
+#pragma warning (push, 0)
+#include <QtSql>
+#include <QSqlDatabase>
+#pragma warning (pop)
+#include <map>
+
+namespace model{
+    class IDataBase;
+}
+
+class IDataBase
+{
+public:
+    /**
+     * @brief ~IDataBase Default destructor.
+     */
+    virtual ~IDataBase() = 0;
+    /**
+     * @brief connect Connect to different database types.
+     * @return connection result.
+     */
+    virtual bool connect(std::string &databaseName) = 0;
+    /**
+     * @brief getData
+     * @param query [out] returned query object.
+     * @param queryData [in] map of query data.
+     * @return query success status.
+     */
+    virtual bool getData(QSqlQuery &query, std::map<std::string,QVariant> &queryData) = 0;
+    /**
+     * @brief insertData
+     * @param query
+     * @return query success status.
+     */
+    virtual bool insertData(QSqlQuery &query, std::map<std::string,QVariant> &queryData){
+        query.    
+    }
+};

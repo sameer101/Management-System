@@ -1,6 +1,6 @@
 #pragma once
-#include "../model/IDataBase.h"
-#include "../model/sqlitedb.h"
+#include "../database/IDataBase.h"
+#include "../database/sqlitedb.h"
 #include <iostream>
 
 namespace controller{
@@ -20,7 +20,6 @@ namespace controller{
     private:
 
     };
-
 
     template<class T>
     DatabaseService<T>::DatabaseService()

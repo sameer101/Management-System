@@ -12,11 +12,13 @@ set(SRC_DIR src)
 set(VIEW_DIR ${SRC_DIR}/view)
 set(CONTROLLER_DIR ${SRC_DIR}/controller)
 set(MODEL_DIR ${SRC_DIR}/model)
+set(DB_DIR ${SRC_DIR}/database)
 set(COMMON_DIR ${SRC_DIR}/common)
 set(SERVICE_DIR ${SRC_DIR}/service)
 add_subdirectory(${VIEW_DIR})
 add_subdirectory(${CONTROLLER_DIR})
 add_subdirectory(${MODEL_DIR})
+add_subdirectory(${DB_DIR})
 add_subdirectory(${SERVICE_DIR})
 set(QML_FILES
     ${SRC_DIR}/main.qml
@@ -38,7 +40,9 @@ set(SRC_FILES
     #common Directory
     ${COMMON_DIR}/Settings.cpp
     # Model Directory
-    ${MODEL_DIR}/SqliteDB.cpp
+    ${MODEL_DIR}/user.cpp
+    # Model Directory
+    ${DB_DIR}/SqliteDB.cpp
     # Service Directory
     ${SERVICE_DIR}/networkdevicesservice.cpp)
 
@@ -48,8 +52,10 @@ set(HEADER_FILES
     #contror diercory
     ${CONTROLLER_DIR}/DatabaseService.h
     # Model Directory
-    ${MODEL_DIR}/IDataBase.h
-    ${MODEL_DIR}/SqliteDB.h
+    ${MODEL_DIR}/user.h
+    # DB Directory
+    ${DB_DIR}/IDataBase.h
+    ${DB_DIR}/SqliteDB.h
     # Service Directory
     ${SERVICE_DIR}/networkdevicesservice.h)
 set(QML_SOURCES

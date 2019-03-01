@@ -4,8 +4,8 @@
 #include <string.h>
 
 #include "controller/DatabaseService.h"
-#include "model/sqlitedb.h"
-#include "model/IDataBase.h"
+#include "database/sqlitedb.h"
+#include "database/IDataBase.h"
 #include "service/networkdevicesservice.h"
 
 template<class T>
@@ -33,11 +33,7 @@ int main(int argc, char *argv[])
 
     QString ip, mask;
     NetworkDevicesService::getInterface(ip, mask);
-    qDebug () << ip << mask;
-    for(auto &address : NetworkDevicesService::getAllIps(ip, mask)){
-            qDebug() << address;
-    }
-   // BYTE * macAddress = NetworkDevicesService::getMacAddress(,"192.168.1.100");
+    //BYTE * macAddress = NetworkDevicesService::getMacAddress(,"192.168.1.100");
 
 
     controller::DatabaseService<SqliteDB> *sqliteDb = new controller::DatabaseService<SqliteDB>();
