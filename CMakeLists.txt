@@ -26,12 +26,14 @@ set(QML_FILES
     ${VIEW_DIR}/Products.qml
     ${VIEW_DIR}/MainContent.qml
     ${VIEW_DIR}/Records.qml
+    ${VIEW_DIR}/HorizontalList.qml
     #components
     ${VIEW_DIR}/components/SideTabBar.qml
     ${VIEW_DIR}/components/SideBarElement.qml
     ${VIEW_DIR}/components/Cart.qml
     ${VIEW_DIR}/components/TopBar.qml
     ${VIEW_DIR}/components/BottomBar.qml
+    ${VIEW_DIR}/components/HorizontalListItem.qml
     ${VIEW_DIR}/components/ControlBarElement.qml
     ${VIEW_DIR}/components/ControlsBar.qml)
 

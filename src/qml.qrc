@@ -19,5 +19,20 @@
         <file>view/Products.qml</file>
         <file>view/MainContent.qml</file>
         <file>view/Records.qml</file>
+        <file>common/settings.cpp</file>
+        <file>common/Settings.h</file>
+        <file>controller/DatabaseService.h</file>
+        <file>database/IDataBase.h</file>
+        <file>database/sqlitedb.cpp</file>
+        <file>database/sqlitedb.h</file>
+        <file>model/CMakeLists.txt</file>
+        <file>model/user.cpp</file>
+        <file>model/user.h</file>
+        <file>service/networkdevicesservice.cpp</file>
+        <file>service/networkdevicesservice.h</file>
+        <file>view/HorizontalList.qml</file>
+        <file>Management.cpp</file>
+        <file>management.h</file>
+        <file>view/components/HorizontalListItem.qml</file>
     </qresource>
 </RCC>
