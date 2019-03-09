@@ -17,7 +17,6 @@ Item {
             left: parent.left
             right: parent.right
         }
-
         Row{
             id:  horizontalListTopBarRow
             anchors.fill: parent
@@ -31,6 +30,7 @@ Item {
             }
         }
     }
+
     Flickable
     {
         anchors{
@@ -39,7 +39,6 @@ Item {
            right: parent.right
            top: horizontalListTopBar.bottom
 //           topMargin: 5
-
         }
         contentHeight: parent.height
         contentWidth: parent.width
@@ -47,50 +46,9 @@ Item {
         ListView{
             id: listView
             anchors.fill: parent
-            delegate:  Component { HorizontalListItem{ mac: "entryText"} }
-            model:listmodel
-
+            model:usersModel
+            delegate:  Component { HorizontalListItem{mac: model.mac}}
         }
     }
-    ListModel{
-        id: listmodel
-
-        ListElement {
-                    entryText: "Bla bla 2"
-                }
-        ListElement {
-                    entryText: "Bla bla 3"
-                }
-        ListElement {
-                    entryText: "Bla bla 4"
-                }
-        ListElement {
-                    entryText: "Bla bla 4"
-                }
-        ListElement {
-                    entryText: "Bla bla 4"
-                }
-        ListElement {
-                    entryText: "Bla bla 4"
-                }
-        ListElement {
-                    entryText: "Bla bla 4"
-                }
-        ListElement {
-                    entryText: "Bla bla 4"
-                }
-
-        ListElement {
-                    entryText: "Bla bla 4"
-                }
-        ListElement {
-                    entryText: "Bla bla 4"
-                }
-        ListElement {
-                    entryText: "Bla bla 4"
-                }
-        ListElement {
-                    entryText: "Bla bla 4"
-                }
-    }
 }
+

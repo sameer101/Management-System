@@ -4,6 +4,8 @@ import QtQuick.Layouts 1.3
 
 import "../js/Settings.js" as SETTINGS
 
+
+
 Item {
     id: item1
     property alias mac: macAddress.text
@@ -52,7 +54,6 @@ Item {
             font.pixelSize: SETTINGS.HORIZONTAL_LIST_ITEM_FONT_SIZE
         }
     }
-
 
 
     layer.enabled: true

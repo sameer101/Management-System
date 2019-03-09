@@ -43,6 +43,7 @@ set(SRC_FILES
     ${COMMON_DIR}/Settings.cpp
     # Model Directory
     ${MODEL_DIR}/user.cpp
+    ${MODEL_DIR}/userListModel.cpp
     # Model Directory
     ${DB_DIR}/SqliteDB.cpp
     # Service Directory
@@ -55,6 +56,7 @@ set(HEADER_FILES
     ${CONTROLLER_DIR}/DatabaseService.h
     # Model Directory
     ${MODEL_DIR}/user.h
+    ${MODEL_DIR}/userListModel.h
     # DB Directory
     ${DB_DIR}/IDataBase.h
     ${DB_DIR}/SqliteDB.h

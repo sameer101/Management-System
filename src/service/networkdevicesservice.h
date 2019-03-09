@@ -1,12 +1,13 @@
 #pragma once
 #include <QVector>
 #include <QString>
-#include <QNetworkInterface>
 #include <WinSock2.h>
 #include <IPHlpApi.h>
+#include <WS2tcpip.h>
+#include <QNetworkInterface>
 #include <stdio.h>
 #include <stdlib.h>
-#include <WS2tcpip.h>
+
 
 namespace service{
     class NetworkDevicesService;

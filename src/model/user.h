@@ -1,6 +1,4 @@
-#ifndef USER_H
-#define USER_H
-
+#pragma once
 #include <QObject>
 #include <QString>
 
@@ -17,10 +15,20 @@ private:
 //    QList<Order> m_orders;
 
 public:
-     User();
+    User();
 
+    User(const QString &mac);
 
+    /**
+     * \brief macAddress get mac address of user.
+     * \return mac address value.
+     */
+    QString macAddr() const;
 
+    /**
+     * \brief setMacAddr .
+     * \param mac Mac address value.
+     */
+    void setMacAddr(QString &mac);
 };
 
-#endif // USER_H
