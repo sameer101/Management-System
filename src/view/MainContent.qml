@@ -13,5 +13,6 @@ Item {
         bottomMargin: 10
         rightMargin: 5
     }
-    Products{}
+    //Products{}
+    HorizontalList{}
 }

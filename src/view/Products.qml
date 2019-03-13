@@ -39,8 +39,8 @@ Item {
 
     ListModel{
         id:topListModel
-    ListElement {src : "imageUrl"}
-
+         ListElement {src : "imageUrl"}
+         ListElement {src : "imageUrl"}
     }
 
 
@@ -87,7 +87,7 @@ Item {
             top: productsTopBar.bottom
             horizontalCenter: parent.horizontalCenter
             bottom: parent.bottom
-            topMargin: 200
+            topMargin: 100
         }
         width: flow.width + 4
         gradient:  Gradient{
